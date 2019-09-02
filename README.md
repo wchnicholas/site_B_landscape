@@ -9,7 +9,7 @@ This study aims to understand how the local fitness landscape of antigenic site 
 * [./data/SampleID.tsv](./data/SampleID.tsv): Describes the sample identity for each fastq file
 * [./Fasta/RefSeq.fa](./Fasta/RefSeq.fa): Reference (wild type) sequences
 
-### ANALYSIS PIPELINE FOR HK68 (H3N2), PERTH09 (H3N2), and WSN (H1N1)
+### ANALYSIS PIPELINE
 1. [./script/EpiB\_fastq\_to\_fitness.py](./script/EpiB_fastq_to_fitness.py): Converts raw reads to variant counts and fitness measures.
     - Input files:
       - Raw sequencing reads in fastq/ folder
