@@ -7,7 +7,8 @@ This study aims to understand how the local fitness landscape of antigenic site 
 ### INPUT FILE
 * All raw sequencing reads, which can be downloaded from NIH SRA database [PRJNA563320](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA563320), should be placed in fastq/ folder. The filename for read 1 should match those described in [./doc/SampleID.tsv](./doc/SampleID.tsv). The filename for read 2 should be the same as read 1 except "R1" is replaced by "R2".
 * [./data/SampleID.tsv](./data/SampleID.tsv): Describes the sample identity for each fastq file
-* [./Fasta/RefSeq.fa](./Fasta/RefSeq.fa): Reference (wild type) sequences
+* [./Fasta/RefSeq.fa](./Fasta/RefSeq.fa): Reference (wild type) nucleotide sequences for the sequencing data
+* [./data/WTseq.tsv](./data/WTseq.tsv): Amino acids for the wild type sequences at residues 156, 158, 159, 190, 193, 196
 
 ### ANALYSIS PIPELINE
 1. [./script/EpiB\_fastq\_to\_fitness.py](./script/EpiB_fastq_to_fitness.py): Converts raw reads to variant counts and fitness measures.
