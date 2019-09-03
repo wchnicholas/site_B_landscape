@@ -17,3 +17,6 @@ This study aims to understand how the local fitness landscape of antigenic site 
       - [./data/SampleInfo.tsv](./data/SampleInfo.tsv)
       - [./Fasta/RefSeq.fa](./Fasta/RefSeq.fa)
     - Output files: result/EpiB\_MultiMutLib\_\*.tsv
+2. [./script/EpiB\_clean\_mut.py](./script/EpiB\_clean\_mut.py): Filter mutants of interest
+    - Input files: result/EpiB\_MultiMutLib\_\*.tsv
+    - Output files: result/EpiB\_Index\_\*.tsv
