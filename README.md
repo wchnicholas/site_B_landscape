@@ -26,7 +26,7 @@ This study aims to understand how the local fitness landscape of antigenic site 
       - result/EpiB\_Index\_\*.tsv
 3. [./script/combine\_data.jl](./script/combine\_data.jl): Re-calculate mutant fitness. Written by [Jakub Otwinowski](https://github.com/jotwin)
     - Input files:
-      - ./result/EpiB\_Index\_\*.tsv
+      - result/EpiB\_Index\_\*.tsv
     - Output files: 
       - [./result/data\_all.csv](./result/data\_all.csv):
 4. [./script/EpiB\_fit\_to\_pref.py](./script/EpiB\_fit\_to\_pref.py): Preference normalization
