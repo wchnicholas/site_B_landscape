@@ -6,10 +6,11 @@ This study aims to understand how the local fitness landscape of antigenic site 
 * [Weblogo](https://weblogo.berkeley.edu) version 3.6
 
 ### INPUT FILE
-* All raw sequencing reads, which can be downloaded from NIH SRA database [PRJNA563320](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA563320), should be placed in fastq/ folder. The filename for read 1 should match those described in [./doc/SampleID.tsv](./doc/SampleID.tsv). The filename for read 2 should be the same as read 1 except "R1" is replaced by "R2".
+* All raw sequencing reads, which can be downloaded from NIH SRA database [PRJNA563320](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA563320), should be placed in fastq/ folder. The filename for read 1 should match those described in [./doc/SampleID.tsv](./doc/SampleID.tsv). The filename for read 2 should be the same as read 1 except "R1" is replaced by "R2"
 * [./data/SampleID.tsv](./data/SampleID.tsv): Describes the sample identity for each fastq file
 * [./Fasta/RefSeq.fa](./Fasta/RefSeq.fa): Reference (wild type) nucleotide sequences for the sequencing data
 * [./data/WTseq.tsv](./data/WTseq.tsv): Amino acids for the wild type sequences at residues 156, 158, 159, 190, 193, 196
+* [./Fasta/HumanH3N2\_All\_2018.aln](./Fasta/HumanH3N2\_All\_2018.aln): Full-length HA protein sequences from human H3N2 downloaded from [GISAID](https://www.gisaid.org/)
 
 ### ANALYSIS PIPELINE
 1. [./script/EpiB\_fastq\_to\_fitness.py](./script/EpiB_fastq_to_fitness.py): Converts raw reads to variant counts and fitness measures.
@@ -34,6 +35,20 @@ This study aims to understand how the local fitness landscape of antigenic site 
       - [./result/data\_all.csv](./result/data\_all.csv):
     - Output files:
       - [./result/data\_pref.tsv](./result/data\_pref.tsv)
+5. [./script/EpiB\_PrefEvol.py](./script/EpiB\_PrefEvol.py): Amino acid sequences of HA residues 156, 158, 159, 190, 193, and 196 in naturally occurring strains were extracted
+    - Input files:
+      - [./result/data\_pref.tsv](./result/data\_pref.tsv)
+      - [./Fasta/HumanH3N2\_All\_2018.fa](./Fasta/HumanH3N2\_All\_2018.fa)
+    - Output files:
+      - [./result/HumanH3N2_HAecto_year.tsv](./result/HumanH3N2_HAecto_year.tsv)
+      - [./result/Prefs\_ByYear.tsv](./result/Prefs\_ByYear.tsv)
+      - [./result/Motif\_ByYear.tsv](./result/Motif\_ByYear.tsv)
+6. [./script/EpiB\_seq\_comparison.py](./script/EpiB\_seq\_comparison.py):
+    - Input files:
+      - [./Fasta/HA_ecto.fa](./Fasta/HA_ecto.fa)
+      - [./result/data\_pref.tsv](./result/data\_pref.tsv)
+    - Output files:
+      - [./result/EpiB_seq_dist.tsv](./result/EpiB_seq_dist.tsv)
 
 ### PLOTTING
 1. [./script/Plot\_CompareRep.R](./script/Plot\_CompareRep.R): Compare mutant fitness (i.e. enrichment ratio) from replicates
@@ -53,9 +68,25 @@ This study aims to understand how the local fitness landscape of antigenic site 
     - Output files:
       - result/seqlogo\_\*.fa
       - graph/seqlogo\_\*.png
-4. [./script/EpiB\_network.py](./script/EpiB\_network.py): Plot fitness landscape (netowrk graph)
+4. [./script/EpiB\_network.py](./script/EpiB\_network.py): Plot fitness landscape (network graph)
     - Input files:
       - [./result/data\_pref.tsv](./result/data\_pref.tsv)
     - Output files:
       - dot/EvoNetwork\_*.dot
       - dot/EvoNetwork\_*.png
+5. [./script/Plot\_TrackPref.R](./script/Plot\_TrackPref.R): Plot the normalized preference of naturally occurring sequences in different genetic backgrounds
+    - Input files:
+      - [./result/Prefs\_ByYear.tsv](./result/Prefs\_ByYear.tsv)
+    - Output files:
+      - [./graph/PrefsByYear.png](./graph/PrefsByYear.png)
+6. [./script/Plot_seq_dist.R](./script/Plot_seq_dist.R): Plot the relationship between pairwise correlation of fitness landscape and pairwise sequence identity
+    - Input files:
+      - [./result/EpiB_seq_dist.tsv](./result/EpiB_seq_dist.tsv)
+    - Output files:
+      - [./graph/Identity_vs_cor_HA.png](./graph/Identity_vs_cor_HA.png)
+      - [./graph/Identity_vs_cor_RBS.png](./graph/Identity_vs_cor_RBS.png)
+7. [./script/Plot_TrackFreq.R](./script/Plot_TrackFreq.R): Plot the frequency of different haplotypes over time
+    - Input files:
+      - [./result/Motif_ByYear.tsv](./result/Motif_ByYear.tsv)
+    - Output files:
+      - [./graph/FreqByYear.png](./graph/FreqByYear.png)
