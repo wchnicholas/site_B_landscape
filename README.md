@@ -10,7 +10,7 @@ This study aims to understand how the local fitness landscape of antigenic site 
 * [./data/SampleID.tsv](./data/SampleID.tsv): Describes the sample identity for each fastq file
 * [./Fasta/RefSeq.fa](./Fasta/RefSeq.fa): Reference (wild type) nucleotide sequences for the sequencing data
 * [./data/WTseq.tsv](./data/WTseq.tsv): Amino acids for the wild type sequences at residues 156, 158, 159, 190, 193, 196
-* [./Fasta/HumanH3N2\_All\_2018.aln](./Fasta/HumanH3N2\_All\_2018.aln): Full-length HA protein sequences from human H3N2 downloaded from [GISAID](https://www.gisaid.org/)
+* [./Fasta/HumanH3N2\_All\_2018.aln.gz](./Fasta/HumanH3N2\_All\_2018.aln.gz): Full-length HA protein sequences from human H3N2 downloaded from [GISAID](https://www.gisaid.org/)
 
 ### ANALYSIS PIPELINE
 1. [./script/EpiB\_fastq\_to\_fitness.py](./script/EpiB_fastq_to_fitness.py): Converts raw reads to variant counts and fitness measures.
