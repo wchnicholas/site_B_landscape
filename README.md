@@ -11,6 +11,7 @@ This study aims to understand how the local fitness landscape of antigenic site 
 * [./Fasta/RefSeq.fa](./Fasta/RefSeq.fa): Reference (wild type) nucleotide sequences for the sequencing data
 * [./data/WTseq.tsv](./data/WTseq.tsv): Amino acids for the wild type sequences at residues 156, 158, 159, 190, 193, 196
 * [./Fasta/HumanH3N2\_All\_2018.aln.gz](./Fasta/HumanH3N2\_All\_2018.aln.gz): Full-length HA protein sequences from human H3N2 downloaded from [GISAID](https://www.gisaid.org/)
+* [./result/AllDKLInfo_2018.csv](./result/AllDKLInfo_2018.csv): KL distance computed by [Armita Nourmohammad](https://phys.washington.edu/people/armita-nourmohammad)
 * [./result/pairwiseparameters_nonlinearity.csv](./result/pairwiseparameters_nonlinearity.csv): Parameters for additive fitness effect and pairwise epistatic interaction from a nonlinear model, computed by [Jakub Otwinowski](https://github.com/jotwin)
 * [./result/pairwiseparameters_linearity.csv](./result/pairwiseparameters_linearity.csv): Parameters for additive fitness effect and pairwise epistatic interaction from a linear model, computed by [Jakub Otwinowski](https://github.com/jotwin)
 * [./data/WTheatmap.tsv](./data/WTheatmap.tsv): A list of wild type residue pairs for heatmap plotting
@@ -129,3 +130,9 @@ This study aims to understand how the local fitness landscape of antigenic site 
       - [./result/Motif_ByYear.tsv](./result/Motif_ByYear.tsv)
     - Output files:
       - [./graph/FreqByYear.png](./graph/FreqByYear.png)
+11. [./script/Plot_KLdist.R](script/Plot_KLdist.R): Plot the relationship between KL distance and preference in different genetic backgrounds
+    - Input files:
+      - [./result/Prefs\_ByYear.tsv](./result/Prefs\_ByYear.tsv)
+      - [./result/AllDKLInfo_2018.csv](./result/AllDKLInfo_2018.csv)
+    - Output files:
+      - ./graph/KLdist_vs_pref\*.png
