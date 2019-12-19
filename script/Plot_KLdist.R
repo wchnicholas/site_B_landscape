@@ -19,7 +19,9 @@ plot_KLdist_vs_pref <- function(data_table, strain, color){
                   filter(Background==strain)
   print (paste("correlation in ", strain, ": ", cor(data_table$KL, data_table$MeanPref, method = "spearman"), sep=''))
   p <-  ggplot(data_table, aes(x=KL,y=MeanPref)) +
-	  geom_point(size=1, color=color) +
+	  geom_point(size=0.5, color=color) +
+          geom_errorbar(aes(ymin=MeanPref-StdPref, ymax=MeanPref+StdPref), color=color, width=0) +
+          geom_errorbarh(aes(xmin=Lowerbound, xmax=Upperbound), color=color, height=0) +
           theme_cowplot(12) + 
 	  theme(plot.title=element_text(size=textsize,face="bold"),
 		axis.title=element_text(size=textsize,face="bold"),
@@ -29,7 +31,8 @@ plot_KLdist_vs_pref <- function(data_table, strain, color){
 		legend.position='right') +
 	  ylab(bquote(bold(Mean~preference))) +
 	  xlab(bquote(bold(KL~distance))) +
-          scale_y_continuous(labels=scaleFUN)
+          scale_y_continuous(labels=scaleFUN) +
+          scale_x_continuous(breaks=c(0.0,0.2,0.4), labels=c('0.0','0.2','0.4'))
   ggsave(graphname, p, height=1.4, width=1.4)
   }
 
