@@ -12,8 +12,8 @@ This study aims to understand how the local fitness landscape of antigenic site 
 * [./data/WTseq.tsv](./data/WTseq.tsv): Amino acids for the wild type sequences at residues 156, 158, 159, 190, 193, 196
 * [./Fasta/HumanH3N2\_All\_2018.aln.gz](./Fasta/HumanH3N2\_All\_2018.aln.gz): Full-length HA protein sequences from human H3N2 downloaded from [GISAID](https://www.gisaid.org/)
 * [./result/AllDKLInfo_2018.csv](./result/AllDKLInfo_2018.csv): KL distance computed by [Armita Nourmohammad](https://phys.washington.edu/people/armita-nourmohammad)
-* [./result/pairwiseparameters_nonlinearity.csv](./result/pairwiseparameters_nonlinearity.csv): Parameters for additive fitness effect and pairwise epistatic interaction from a nonlinear model, computed by [Jakub Otwinowski](https://github.com/jotwin)
-* [./result/pairwiseparameters_linearity.csv](./result/pairwiseparameters_linearity.csv): Parameters for additive fitness effect and pairwise epistatic interaction from a linear model, computed by [Jakub Otwinowski](https://github.com/jotwin)
+* [./result/pairwiseparameters_nonlinearity.csv](./result/pairwiseparameters_nonlinearity.csv): Parameters for additive fitness effect and pairwise epistatic interaction from a nonlinear model, computed by [Jakub Otwinowski](https://github.com/jotwin) (see [./modelepistasis.ipynb](./modelepistasis.ipynb))
+* [./result/pairwiseparameters_linearity.csv](./result/pairwiseparameters_linearity.csv): Parameters for additive fitness effect and pairwise epistatic interaction from a linear model, computed by [Jakub Otwinowski](https://github.com/jotwin) (see [./modelepistasis.ipynb](./modelepistasis.ipynb))
 * [./data/WTheatmap.tsv](./data/WTheatmap.tsv): A list of wild type residue pairs for heatmap plotting
 
 ### ANALYSIS PIPELINE
