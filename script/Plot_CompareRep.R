@@ -17,12 +17,12 @@ PlotCompareFit_Rep <- function(table_data,strainname){
   colorscale <- c(brewer.pal(9,"Set1"))
   table_data <- filter(table_data,strain==strainname)
   print (strainname)
-  R1fit = log10(table_data$Rep1Fitness)
-  R2fit = log10(table_data$Rep2Fitness)
+  R1fit = log(table_data$Rep1Fitness)
+  R2fit = log(table_data$Rep2Fitness)
   R1fit[!is.finite(R1fit)] <- NA
   R2fit[!is.finite(R2fit)] <- NA
   print (paste("Pearson Cor:", cor(R1fit,R2fit,use="complete.obs"),sep=' '))
-  p <- ggplot(table_data,aes(x=log10(Rep1Fitness),y=log10(Rep2Fitness),color=mut_type)) +
+  p <- ggplot(table_data,aes(x=log(Rep1Fitness),y=log(Rep2Fitness),color=mut_type)) +
 	 geom_point(size=0.3) +
          theme_cowplot(12) +
          scale_color_manual(values=c('gray', colorscale)) +
