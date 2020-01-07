@@ -3,6 +3,7 @@ This study aims to understand how the local fitness landscape of antigenic site 
 
 ### REQUIREMENTS
 * [Python](https://www.python.org/) version 2.7
+* [R](https://www.r-project.org/) version 3.6
 * [Weblogo](https://weblogo.berkeley.edu) version 3.6
 
 ### INPUT FILE
