@@ -1,3 +1,6 @@
+This README describes the scripts used for the sequence analysis in:   
+[Major antigenic site B of human influenza H3N2 viruses has an evolving local fitness landscape](https://www.nature.com/articles/s41467-020-15102-5)
+
 ## ANALYSIS FOR H3N2 ANTIGENIC SITE B DEEP MUTATIONAL SCANNING
 This study aims to understand how the local fitness landscape of antigenic site B in human H3N2 HA evolves in the past 50 years. The repository here describes the analysis for the deep mutational scanning experiment that focuses on HA1 residues 156, 158, 159, 190, 193, 196 in six different genetic backgrounds, namely A/Hong Kong/1/1968 (HK68), A/Bangkok/1/1979 (Bk79), A/Beijing/353/1989 (Bei89), A/Moscow/10/1999 (Mos99), A/Brisbane/10/2007 (Bris07), and A/North Dakota/26/2016 (NDako16). 
 
